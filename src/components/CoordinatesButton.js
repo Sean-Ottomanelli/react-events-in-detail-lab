@@ -1,23 +1,15 @@
 // Code CoordinatesButton Component Here
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 
 
 class CoordinatesButton extends Component {
-    
 
-
-createXAndYArray = (evt) => {
-    let xAndYArray = []
-    xAndYArray = [evt.clientX, evt.clientY]
-    console.log(xAndYArray)
-}
 
     render(props) {
-        return(
+        return (
             <div>
-            {this.props.onReceiveCoordinates("I'm inside the div")}
-            <button onClick = {this.createXandYArray} >Click Me!</button>
+                <button onClick={(evt) => this.props.onReceiveCoordinates([evt.clientX, evt.clientY])} >Click Me!</button>
             </div>
         )
     }
